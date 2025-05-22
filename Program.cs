@@ -4,7 +4,26 @@ using Microsoft.OpenApi.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using MediatR;
+using Bookstore.Api.Models;
+using Bookstore.Api.Features.CreateBook;
+using Bookstore.Api.Features.GetBooks;
+using Bookstore.Api.Features.GetBookById;
+using Bookstore.Api.Features.DeleteBook;
+using Bookstore.Api.Features.UpdateBook;
+var books = new List<Book>
+{
+    new Book { Id = 1, Title = "1984", Author = "George Orwell", Price = 9.99m },
+    new Book { Id = 2, Title = "Brave New World", Author = "Aldous Huxley", Price = 8.49m },
+    new Book { Id = 3, Title = "Fahrenheit 451", Author = "Ray Bradbury", Price = 7.50m },
+    new Book { Id = 4, Title = "The Hobbit", Author = "J.R.R. Tolkien", Price = 10.99m },
+    new Book { Id = 5, Title = "To Kill a Mockingbird", Author = "Harper Lee", Price = 6.95m }
+};
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
+var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>()!;
+var keyBytes = Encoding.UTF8.GetBytes(jwtSettings.SecretKey);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
@@ -13,14 +32,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         ValidateAudience = false,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes("password123-password123-password123-password123"))
+        IssuerSigningKey = new SymmetricSecurityKey(keyBytes)
     };
 });
-
+builder.Services.AddSingleton<List<Book>>(books);
 builder.Services.AddAuthorization();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddMediatR(typeof(Program).Assembly);
 builder.Services.AddSwaggerGen(c =>
 {
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -61,7 +80,7 @@ app.MapPost("/login", (string username, string password) =>
         return Results.Unauthorized();
     }
     var claims = new[] { new Claim(ClaimTypes.Name, username) };
-    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("password123-password123-password123-password123"));
+    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey));
     var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
     var token = new JwtSecurityToken(
        claims: claims,
@@ -73,39 +92,17 @@ app.MapPost("/login", (string username, string password) =>
 });
 
 
-var books = new List<Book>
-{
-    new Book { Id = 1, Title = "1984", Author = "George Orwell", Price = 9.99m },
-    new Book { Id = 2, Title = "Brave New World", Author = "Aldous Huxley", Price = 8.49m },
-    new Book { Id = 3, Title = "Fahrenheit 451", Author = "Ray Bradbury", Price = 7.50m },
-    new Book { Id = 4, Title = "The Hobbit", Author = "J.R.R. Tolkien", Price = 10.99m },
-    new Book { Id = 5, Title = "To Kill a Mockingbird", Author = "Harper Lee", Price = 6.95m }
-};
+
 foreach (var book in books)
 {
     Console.WriteLine($"Id: {book.Id}, Title: {book.Title}, Author: {book.Author}, Price: {book.Price}");
 }
 
-app.MapGet("/books", (string? author, string? title, decimal? minPrice, decimal? maxPrice) =>
+app.MapGet("/books", async (string? author, string? title, decimal? minPrice, decimal? maxPrice, IMediator mediator) =>
 {
-    var filteredBooks = books.AsQueryable();
-    if (!string.IsNullOrEmpty(author))
-        {
-            filteredBooks = filteredBooks.Where(b => b.Author.Contains(author, StringComparison.OrdinalIgnoreCase));
-        }
-    if (!string.IsNullOrEmpty(title))
-        {
-            filteredBooks = filteredBooks.Where(b => b.Title.Contains(title, StringComparison.OrdinalIgnoreCase));
-        }
-    if (minPrice.HasValue)
-        {
-            filteredBooks = filteredBooks.Where(b => b.Price >= minPrice.Value);
-        }
-    if (maxPrice.HasValue)
-        {
-            filteredBooks = filteredBooks.Where(b => b.Price <= maxPrice.Value);
-        }
-    return filteredBooks.ToList();
+    var query = new GetBooksQuery(author, title, minPrice, maxPrice);
+    var books = await mediator.Send(query);
+    return Results.Ok(books);
 });
 
 app.MapGet("/books/{id}", (int id) =>
@@ -118,60 +115,81 @@ app.MapGet("/books/{id}", (int id) =>
     return Results.Ok(book);
 });
 
-app.MapPost("/books", (Book newBook) =>
+app.MapPost("/books", async (CreateBookCommand command, IMediator mediator) =>
 {
-    int newId;
-    if (books.Any())
+    if (string.IsNullOrWhiteSpace(command.Title))
     {
-        newId = books.Max(b => b.Id) + 1;
-    }else
+        return Results.BadRequest("Book must have a title");
+     }
+    else if (command.Title.Length < 3)
     {
-        newId = 1;
+        return Results.BadRequest("Title must be longer than 3 characaters");
     }
-    newBook.Id = newId;
-    books.Add(newBook);
-    return Results.Created($"/books/{newId}", newBook);
+
+    if (string.IsNullOrWhiteSpace(command.Author))
+    {
+        return Results.BadRequest("Author is required");
+    }
+    else if (command.Title.Length < 3)
+    {
+        return Results.BadRequest("Author must be longer than 3 characaters");
+    }
+
+    if (command.Price <= 0)
+    {
+        return Results.BadRequest("Price must be greater than zero");
+    }
+        
+    var createdBook = await mediator.Send(command);
+    return Results.Created($"/books/{createdBook.Id}", createdBook);
+    
+   
+
 });
 
-app.MapPut("/books/{id}", (int id, Book updatedBook) =>
+app.MapPut("/books/{id}", async (int id, UpdateBookCommand command, IMediator mediator) =>
 {
-    var book = books.FirstOrDefault(b => b.Id == id);
-    if (book == null)
+    if (string.IsNullOrWhiteSpace(command.Title))
     {
-        return Results.NotFound($"Book with id {id} was not found.");
+        return Results.BadRequest("Book must have a title");
     }
-    if (!string.IsNullOrEmpty(updatedBook.Title))
+    else if (command.Title.Length < 3)
     {
-        book.Title = updatedBook.Title;
+        return Results.BadRequest("Title must be longer than 3 characaters");
     }
-    if (!string.IsNullOrEmpty(updatedBook.Author))
+
+    if (string.IsNullOrWhiteSpace(command.Author))
     {
-        book.Author = updatedBook.Author;
+        return Results.BadRequest("Author is required");
     }
-    if(updatedBook.Price > 0)
+    else if (command.Title.Length < 3)
     {
-        book.Price = updatedBook.Price;
+        return Results.BadRequest("Author must be longer than 3 characaters");
     }
-    return Results.Ok(book);
+
+    if (command.Price <= 0)
+    {
+        return Results.BadRequest("Price must be greater than zero");
+    }
+    
+    var fullCommand = new FullUpdateBookCommand(id, command.Title, command.Author, command.Price);
+    var updatedBook = await mediator.Send(fullCommand);
+    if (updatedBook == null)
+    {
+        return Results.NotFound("Book not found");
+    }
+    return Results.Ok(updatedBook);
 }).RequireAuthorization();
 
-app.MapDelete("/books/{id}", (int id) =>
+app.MapDelete("/books/{id}", async (int id, IMediator mediator) =>
 {
-    var book = books.FirstOrDefault(b => b.Id == id);
-    if (book == null)
+    bool result = await mediator.Send(new DeleteBookCommand(id));
+    if (result == false)
     {
-        return Results.NotFound($"Book with id {id} not found.");
+        return Results.NotFound($"Book with id {id} was not found");
     }
+    return Results.Ok($"Book with id {id} was deleted.");
 
-    books.Remove(book);
-    return Results.Ok($"Book with id {id} has been deleted.");
 }).RequireAuthorization();
 
 app.Run();
-public class Book
-{
-    public int Id { get; set; }
-    public string Title { get; set; } = string.Empty;    
-    public string Author { get; set; } = string.Empty;
-    public decimal Price { get; set; }
-}

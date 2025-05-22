@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\bin"
+    "\\bin",
+    "\\Features",
+    "\\Features\\CreateBook",
+    "\\Features\\DeleteBook",
+    "\\Features\\GetBookById",
+    "\\Features\\GetBooks",
+    "\\Features\\UpdateBook"
   ],
-  "SelectedNode": "\\bin",
+  "SelectedNode": "\\Features\\UpdateBook\\UpdateBookHandler.cs",
   "PreviewInSolutionExplorer": false
 }

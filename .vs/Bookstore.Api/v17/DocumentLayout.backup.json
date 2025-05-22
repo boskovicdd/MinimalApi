@@ -5,6 +5,46 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bosko\\Bookstore.Api\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bosko\\Bookstore.Api\\Features\\CreateBook\\CreateBookHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Features\\CreateBook\\CreateBookHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bosko\\Bookstore.Api\\Features\\GetBooks\\GetBooksHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Features\\GetBooks\\GetBooksHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bosko\\Bookstore.Api\\Features\\UpdateBook\\UpdateBookHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Features\\UpdateBook\\UpdateBookHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bosko\\Bookstore.Api\\Features\\GetBooks\\GetBooksQuery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Features\\GetBooks\\GetBooksQuery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bosko\\Bookstore.Api\\Features\\CreateBook\\CreateBookCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Features\\CreateBook\\CreateBookCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bosko\\Bookstore.Api\\Models\\Book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bosko\\Bookstore.Api\\Features\\DeleteBook\\DeleteBookHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Features\\DeleteBook\\DeleteBookHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bosko\\Bookstore.Api\\Features\\DeleteBook\\DeleteBookCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Features\\DeleteBook\\DeleteBookCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bosko\\Bookstore.Api\\Features\\GetBookById\\GetBookByIdHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Features\\GetBookById\\GetBookByIdHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bosko\\Bookstore.Api\\Features\\GetBookById\\GetBookByIdQuery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Features\\GetBookById\\GetBookByIdQuery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,9 +64,142 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\bosko\\Bookstore.Api\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAewIkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T12:01:17.487Z",
+              "WhenOpened": "2025-05-21T18:40:40.832Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetBooksQuery.cs",
+              "DocumentMoniker": "C:\\Users\\bosko\\Bookstore.Api\\Features\\GetBooks\\GetBooksQuery.cs",
+              "RelativeDocumentMoniker": "Features\\GetBooks\\GetBooksQuery.cs",
+              "ToolTip": "C:\\Users\\bosko\\Bookstore.Api\\Features\\GetBooks\\GetBooksQuery.cs",
+              "RelativeToolTip": "Features\\GetBooks\\GetBooksQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T19:10:09.516Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetBooksHandler.cs",
+              "DocumentMoniker": "C:\\Users\\bosko\\Bookstore.Api\\Features\\GetBooks\\GetBooksHandler.cs",
+              "RelativeDocumentMoniker": "Features\\GetBooks\\GetBooksHandler.cs",
+              "ToolTip": "C:\\Users\\bosko\\Bookstore.Api\\Features\\GetBooks\\GetBooksHandler.cs",
+              "RelativeToolTip": "Features\\GetBooks\\GetBooksHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T19:10:31.467Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UpdateBookHandler.cs",
+              "DocumentMoniker": "C:\\Users\\bosko\\Bookstore.Api\\Features\\UpdateBook\\UpdateBookHandler.cs",
+              "RelativeDocumentMoniker": "Features\\UpdateBook\\UpdateBookHandler.cs",
+              "ToolTip": "C:\\Users\\bosko\\Bookstore.Api\\Features\\UpdateBook\\UpdateBookHandler.cs",
+              "RelativeToolTip": "Features\\UpdateBook\\UpdateBookHandler.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T20:06:08.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateBookHandler.cs",
+              "DocumentMoniker": "C:\\Users\\bosko\\Bookstore.Api\\Features\\CreateBook\\CreateBookHandler.cs",
+              "RelativeDocumentMoniker": "Features\\CreateBook\\CreateBookHandler.cs",
+              "ToolTip": "C:\\Users\\bosko\\Bookstore.Api\\Features\\CreateBook\\CreateBookHandler.cs",
+              "RelativeToolTip": "Features\\CreateBook\\CreateBookHandler.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T18:16:06.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateBookCommand.cs",
+              "DocumentMoniker": "C:\\Users\\bosko\\Bookstore.Api\\Features\\CreateBook\\CreateBookCommand.cs",
+              "RelativeDocumentMoniker": "Features\\CreateBook\\CreateBookCommand.cs",
+              "ToolTip": "C:\\Users\\bosko\\Bookstore.Api\\Features\\CreateBook\\CreateBookCommand.cs",
+              "RelativeToolTip": "Features\\CreateBook\\CreateBookCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T19:42:08.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\bosko\\Bookstore.Api\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Models\\Book.cs",
+              "ToolTip": "C:\\Users\\bosko\\Bookstore.Api\\Models\\Book.cs",
+              "RelativeToolTip": "Models\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T19:38:58.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DeleteBookHandler.cs",
+              "DocumentMoniker": "C:\\Users\\bosko\\Bookstore.Api\\Features\\DeleteBook\\DeleteBookHandler.cs",
+              "RelativeDocumentMoniker": "Features\\DeleteBook\\DeleteBookHandler.cs",
+              "ToolTip": "C:\\Users\\bosko\\Bookstore.Api\\Features\\DeleteBook\\DeleteBookHandler.cs",
+              "RelativeToolTip": "Features\\DeleteBook\\DeleteBookHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T19:45:42.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DeleteBookCommand.cs",
+              "DocumentMoniker": "C:\\Users\\bosko\\Bookstore.Api\\Features\\DeleteBook\\DeleteBookCommand.cs",
+              "RelativeDocumentMoniker": "Features\\DeleteBook\\DeleteBookCommand.cs",
+              "ToolTip": "C:\\Users\\bosko\\Bookstore.Api\\Features\\DeleteBook\\DeleteBookCommand.cs",
+              "RelativeToolTip": "Features\\DeleteBook\\DeleteBookCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T19:45:24.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GetBookByIdHandler.cs",
+              "DocumentMoniker": "C:\\Users\\bosko\\Bookstore.Api\\Features\\GetBookById\\GetBookByIdHandler.cs",
+              "RelativeDocumentMoniker": "Features\\GetBookById\\GetBookByIdHandler.cs",
+              "ToolTip": "C:\\Users\\bosko\\Bookstore.Api\\Features\\GetBookById\\GetBookByIdHandler.cs",
+              "RelativeToolTip": "Features\\GetBookById\\GetBookByIdHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T19:30:41.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GetBookByIdQuery.cs",
+              "DocumentMoniker": "C:\\Users\\bosko\\Bookstore.Api\\Features\\GetBookById\\GetBookByIdQuery.cs",
+              "RelativeDocumentMoniker": "Features\\GetBookById\\GetBookByIdQuery.cs",
+              "ToolTip": "C:\\Users\\bosko\\Bookstore.Api\\Features\\GetBookById\\GetBookByIdQuery.cs",
+              "RelativeToolTip": "Features\\GetBookById\\GetBookByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T19:30:09.054Z",
               "EditorCaption": ""
             }
           ]

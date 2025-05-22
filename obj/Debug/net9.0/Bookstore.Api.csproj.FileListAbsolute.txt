@@ -27,7 +27,6 @@ C:\Users\bosko\Bookstore.Api\obj\Debug\net9.0\staticwebassets\msbuild.build.Book
 C:\Users\bosko\Bookstore.Api\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.Bookstore.Api.props
 C:\Users\bosko\Bookstore.Api\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Bookstore.Api.props
 C:\Users\bosko\Bookstore.Api\obj\Debug\net9.0\staticwebassets.pack.json
-C:\Users\bosko\Bookstore.Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\bosko\Bookstore.Api\obj\Debug\net9.0\Bookstor.AEE5A5E8.Up2Date
 C:\Users\bosko\Bookstore.Api\obj\Debug\net9.0\Bookstore.Api.dll
 C:\Users\bosko\Bookstore.Api\obj\Debug\net9.0\refint\Bookstore.Api.dll
@@ -42,3 +41,8 @@ C:\Users\bosko\Bookstore.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.
 C:\Users\bosko\Bookstore.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\bosko\Bookstore.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\bosko\Bookstore.Api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\bosko\Bookstore.Api\obj\Debug\net9.0\Bookstore.Api.sourcelink.json
+C:\Users\bosko\Bookstore.Api\bin\Debug\net9.0\MediatR.dll
+C:\Users\bosko\Bookstore.Api\bin\Debug\net9.0\MediatR.Contracts.dll
+C:\Users\bosko\Bookstore.Api\bin\Debug\net9.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\bosko\Bookstore.Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
