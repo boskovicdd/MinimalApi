@@ -7,8 +7,9 @@
     "\\Features\\DeleteBook",
     "\\Features\\GetBookById",
     "\\Features\\GetBooks",
-    "\\Features\\UpdateBook"
+    "\\Features\\UpdateBook",
+    "\\Models"
   ],
-  "SelectedNode": "\\Features\\UpdateBook\\UpdateBookHandler.cs",
+  "SelectedNode": "\\Features\\UpdateBook\\UpdatePriceCommand.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -13,7 +13,7 @@ public class CreateBookHandler : IRequestHandler<CreateBookCommand, Book>
     }
     public Task<Book> Handle(CreateBookCommand request, CancellationToken cancellationToken)
     {
-        
+        var book = new Book(request.Title, request.Author, request.Price);
         int newId;
         if (_books.Any())
         {
@@ -23,13 +23,7 @@ public class CreateBookHandler : IRequestHandler<CreateBookCommand, Book>
         {
             newId = 1;
         }
-        var book = new Book
-        {
-            Id = newId,
-            Title = request.Title,
-            Author = request.Author,
-            Price = request.Price
-        };
+        book.Id = newId;
         _books.Add(book);
         return Task.FromResult(book);
 

@@ -117,69 +117,77 @@ app.MapGet("/books/{id}", (int id) =>
 
 app.MapPost("/books", async (CreateBookCommand command, IMediator mediator) =>
 {
-    if (string.IsNullOrWhiteSpace(command.Title))
+    try
     {
-        return Results.BadRequest("Book must have a title");
-     }
-    else if (command.Title.Length < 3)
-    {
-        return Results.BadRequest("Title must be longer than 3 characaters");
+        var createdBook = await mediator.Send(command);
+        return Results.Created($"/books/{createdBook.Id}", createdBook);
     }
-
-    if (string.IsNullOrWhiteSpace(command.Author))
+    catch (ArgumentException ex)
     {
-        return Results.BadRequest("Author is required");
+        return Results.BadRequest(new { error = ex.Message });
     }
-    else if (command.Title.Length < 3)
-    {
-        return Results.BadRequest("Author must be longer than 3 characaters");
-    }
-
-    if (command.Price <= 0)
-    {
-        return Results.BadRequest("Price must be greater than zero");
-    }
-        
-    var createdBook = await mediator.Send(command);
-    return Results.Created($"/books/{createdBook.Id}", createdBook);
-    
    
 
 });
 
-app.MapPut("/books/{id}", async (int id, UpdateBookCommand command, IMediator mediator) =>
+
+app.MapPut("/books/{id}/title", async (int id, UpdateTitleCommand command, IMediator mediator) =>
 {
-    if (string.IsNullOrWhiteSpace(command.Title))
-    {
-        return Results.BadRequest("Book must have a title");
-    }
-    else if (command.Title.Length < 3)
-    {
-        return Results.BadRequest("Title must be longer than 3 characaters");
-    }
-
-    if (string.IsNullOrWhiteSpace(command.Author))
-    {
-        return Results.BadRequest("Author is required");
-    }
-    else if (command.Title.Length < 3)
-    {
-        return Results.BadRequest("Author must be longer than 3 characaters");
-    }
-
-    if (command.Price <= 0)
-    {
-        return Results.BadRequest("Price must be greater than zero");
-    }
     
-    var fullCommand = new FullUpdateBookCommand(id, command.Title, command.Author, command.Price);
-    var updatedBook = await mediator.Send(fullCommand);
-    if (updatedBook == null)
+    try
     {
-        return Results.NotFound("Book not found");
+        var updatedBook = await mediator.Send(new FullUpdateTitleCommand(id, command.NewTitle));
+        if(updatedBook == null)
+        {
+            return Results.NotFound();
+        }
+        return Results.Ok(updatedBook);
+        
+    }catch(ArgumentException ex)
+    {
+        return Results.BadRequest(new { error = ex.Message });
     }
-    return Results.Ok(updatedBook);
 }).RequireAuthorization();
+
+app.MapPut("/books/{id}/author", async (int id, UpdateAuthorCommand command, IMediator mediator) =>
+{
+
+    try
+    {
+        var updatedBook = await mediator.Send(new FullUpdateAuthorCommand(id, command.NewAuthor));
+        if (updatedBook == null)
+        {
+            return Results.NotFound();
+        }
+        return Results.Ok(updatedBook);
+    }
+    catch (ArgumentException ex)
+    {
+        return Results.BadRequest(new { error = ex.Message });
+    }
+}).RequireAuthorization();
+
+app.MapPut("/books/{id}/price", async (int id, UpdatePriceCommand command, IMediator mediator) =>
+{
+
+    try
+    {
+        var updatedBook = await mediator.Send(new FullUpdatePriceCommand(id, command.NewPrice));
+        if (updatedBook == null)
+        {
+            return Results.NotFound();
+        }
+        return Results.Ok(updatedBook);
+    }
+    catch (ArgumentException ex)
+    {
+        return Results.BadRequest(new { error = ex.Message });
+    }
+}).RequireAuthorization();
+
+
+
+
 
 app.MapDelete("/books/{id}", async (int id, IMediator mediator) =>
 {
